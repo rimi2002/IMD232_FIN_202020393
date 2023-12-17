@@ -37,14 +37,15 @@ function draw() {
   let tr1 = random(20);
   let tg1 = random(0);
   let tb1 = random(100);
-  let ta1 = 100;
-  stroke(tr1, tg1, tb1, ta1);
+  let ta1 = 255;
+  fill(tr1, tg1, tb1, ta1);
 
-  let tfr1 = 100;
-  let tfg1 = 100;
-  let tfb1 = 104;
-  let tfa1 = 180;
-  fill(tfr1, tfg1, tfb1, tfa1);
+  // let tfr1 = 100;
+  // let tfg1 = 100;
+  // let tfb1 = 104;
+  // let tfa1 = 255;
+  // fill(tfr1, tfg1, tfb1, tfa1);
+  stroke('white');
 
   sphere(30);
   pop();
@@ -63,14 +64,15 @@ function draw() {
   let tr2 = random(20);
   let tg2 = random(0);
   let tb2 = random(100);
-  let ta2 = 100;
-  stroke(tr2, tg2, tb2, ta2);
+  let ta2 = 255;
+  fill(tr2, tg2, tb2, ta2);
 
-  let tfr2 = 100;
-  let tfg2 = 100;
-  let tfb2 = 104;
-  let tfa2 = 180;
-  fill(tfr2, tfg2, tfb2, tfa2);
+  // let tfr2 = 100;
+  // let tfg2 = 100;
+  // let tfb2 = 104;
+  // let tfa2 = 255;
+  // fill(tfr2, tfg2, tfb2, tfa2);
+  stroke('white');
 
   sphere(topic2Size); // 반지름을 변수로 설정
   pop();
@@ -86,14 +88,15 @@ function draw() {
   let tr3 = random(20);
   let tg3 = random(0);
   let tb3 = random(100);
-  let ta3 = 100;
-  stroke(tr3, tg3, tb3, ta3);
+  let ta3 = 255;
+  fill(tr3, tg3, tb3, ta3);
 
-  let tfr3 = 100;
-  let tfg3 = 100;
-  let tfb3 = 104;
-  let tfa3 = 180;
-  fill(tfr3, tfg3, tfb3, tfa3);
+  // let tfr3 = 100;
+  // let tfg3 = 100;
+  // let tfb3 = 104;
+  // let tfa3 = 255;
+  // fill(tfr3, tfg3, tfb3, tfa3);
+  stroke('white');
 
   sphere(20); // 반지름을 25로 변경
   pop();
@@ -116,16 +119,17 @@ function draw() {
       translate(x, y, z);
 
       let r = random(0);
-      let g = random(0);
-      let b = random(100);
-      let a = random(140); // 투명도를 랜덤으로 설정
-      stroke(r, g, b, a);
+      let g = random(90);
+      let b = random(200);
+      let a = random(255); // 투명도를 랜덤으로 설정
+      fill(r, g, b, a);
 
-      let fr = 100;
-      let fg = 100;
-      let fb = 104;
-      let fa = 180;
-      fill(fr, fg, fb, fa);
+      // let fr = 100;
+      // let fg = 100;
+      // let fb = 100;
+      // let fa = 255;
+      // stroke(fr, fg, fb, fa);
+      stroke('white');
 
       box(12);
       pop();
@@ -140,7 +144,7 @@ function draw() {
 
     push();
     translate(px, py, pz);
-    fill(255, random(130)); // 투명도를 랜덤으로 설정
+    fill(255, random(250)); // 투명도를 랜덤으로 설정
     noStroke();
     sphere(3);
     pop();
