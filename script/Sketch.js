@@ -11,17 +11,92 @@ function setup() {
 
   // 원근 투영 설정
   ortho(-width / 2, width / 2, -height / 2, height / 2, -4000, 4000);
+
+  // 음악 재생
+  backgroundMusic.loop();
 }
 
 function draw() {
   // 배경 설정
-  background(0);
+  background('#03030A');
 
   // 크기 조절 변수
   let scl = 90;
 
   // 마우스로 화면 회전 가능하도록 설정
   orbitControl();
+
+  // 첫 번째 주제부 위치 계산
+  let topic1X = 180;
+  let topic1Y = 160;
+  let topic1Z = 200;
+
+  // 주제부 그리기
+  push();
+  translate(topic1X, topic1Y, topic1Z);
+  let tr1 = random(20);
+  let tg1 = random(0);
+  let tb1 = random(100);
+  let ta1 = 100;
+  stroke(tr1, tg1, tb1, ta1);
+
+  let tfr1 = 100;
+  let tfg1 = 100;
+  let tfb1 = 104;
+  let tfa1 = 180;
+  fill(tfr1, tfg1, tfb1, tfa1);
+
+  sphere(30);
+  pop();
+
+  // 두 번째 주제부 위치 계산
+  let topic2X = -180;
+  let topic2Y = -100;
+  let topic2Z = -170;
+
+  // 두 번째 주제부 크기 조절
+  let topic2Size = 20;
+
+  // 주제부 그리기
+  push();
+  translate(topic2X, topic2Y, topic2Z);
+  let tr2 = random(20);
+  let tg2 = random(0);
+  let tb2 = random(100);
+  let ta2 = 100;
+  stroke(tr2, tg2, tb2, ta2);
+
+  let tfr2 = 100;
+  let tfg2 = 100;
+  let tfb2 = 104;
+  let tfa2 = 180;
+  fill(tfr2, tfg2, tfb2, tfa2);
+
+  sphere(topic2Size); // 반지름을 변수로 설정
+  pop();
+
+  // 세 번째 주제부 위치 계산
+  let topic3X = 80;
+  let topic3Y = -180;
+  let topic3Z = 100;
+
+  // 세 번째 주제부 그리기 (삼각뿔)
+  push();
+  translate(topic3X, topic3Y, topic3Z);
+  let tr3 = random(20);
+  let tg3 = random(0);
+  let tb3 = random(100);
+  let ta3 = 100;
+  stroke(tr3, tg3, tb3, ta3);
+
+  let tfr3 = 100;
+  let tfg3 = 100;
+  let tfb3 = 104;
+  let tfa3 = 180;
+  fill(tfr3, tfg3, tfb3, tfa3);
+
+  sphere(20); // 반지름을 25로 변경
+  pop();
 
   // 파라미터 공간을 순회하면서 3D 모양 그리기
   for (let v = 0; v < 1; v += 1 / 100) {
@@ -40,17 +115,35 @@ function draw() {
       push();
       translate(x, y, z);
 
-      // 색상 랜덤으로 설정
       let r = random(0);
-      let g = random(100);
-      let b = random(255);
-      let a = 100;
-      fill(r, g, b, a);
-      stroke('#D6D7E2');
+      let g = random(0);
+      let b = random(100);
+      let a = random(140); // 투명도를 랜덤으로 설정
+      stroke(r, g, b, a);
+
+      let fr = 100;
+      let fg = 100;
+      let fb = 104;
+      let fa = 180;
+      fill(fr, fg, fb, fa);
 
       box(12);
       pop();
     }
+  }
+
+  // 배경에 빛나는 별 그리기
+  for (let i = 0; i < 30; i++) {
+    let px = random(-width / 2, width / 2);
+    let py = random(-height / 2, height / 2);
+    let pz = random(-4000, 4000);
+
+    push();
+    translate(px, py, pz);
+    fill(255, random(130)); // 투명도를 랜덤으로 설정
+    noStroke();
+    sphere(3);
+    pop();
   }
 }
 
