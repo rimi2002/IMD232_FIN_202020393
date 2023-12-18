@@ -82,7 +82,7 @@ function draw() {
   let topic3Y = -180;
   let topic3Z = 100;
 
-  // 세 번째 주제부 그리기 (삼각뿔)
+  // 세 번째 주제부 그리기
   push();
   translate(topic3X, topic3Y, topic3Z);
   let tr3 = random(20);
@@ -101,10 +101,17 @@ function draw() {
   sphere(20); // 반지름을 25로 변경
   pop();
 
-  // 파라미터 공간을 순회하면서 3D 모양 그리기
+  // 매개변수가 공간을 순회하면서 3D 모양 그리기
+
+  //x=(1+sin(1πu)sin(1πv))sin(4πv)
+  //y=(1+sin(1πu)sin(1πv))cos(4πv)
+  //z=cos(1πu)sin(1πv)+4v-2
+  //0≦u≦1
+  //0≦v≦1
+
   for (let v = 0; v < 1; v += 1 / 100) {
     for (let u = 0; u < 1; u += 1 / 100) {
-      // 파라미터를 이용하여 3D 모양 계산
+      // 매개변수를 이용하여 3D 모양 계산
       let x = (1 + sin(1 * PI * u) * sin(1 * PI * v)) * sin(4 * PI * v);
       let y = (1 + sin(1 * PI * u) * sin(1 * PI * v)) * cos(4 * PI * v);
       let z = cos(1 * PI * u) * sin(1 * PI * v) + 6 * v - 2;
