@@ -101,8 +101,8 @@ function draw() {
   sphere(20); // 반지름을 25로 변경
   pop();
 
-  // 매개변수가 공간을 순회하면서 3D 모양 그리기
-
+  //참고(MathArt)
+  //https://twitter.com/ru_sack/status/775098568298278912
   //x=(1+sin(1πu)sin(1πv))sin(4πv)
   //y=(1+sin(1πu)sin(1πv))cos(4πv)
   //z=cos(1πu)sin(1πv)+4v-2
@@ -112,8 +112,8 @@ function draw() {
   for (let v = 0; v < 1; v += 1 / 100) {
     for (let u = 0; u < 1; u += 1 / 100) {
       // 매개변수를 이용하여 3D 모양 계산
-      let x = (1 + sin(1 * PI * u) * sin(1 * PI * v)) * sin(4 * PI * v);
-      let y = (1 + sin(1 * PI * u) * sin(1 * PI * v)) * cos(4 * PI * v);
+      let x = (1 + sin(1.2 * PI * u) * sin(1 * PI * v)) * sin(4 * PI * v);
+      let y = (1 + sin(1.2 * PI * u) * sin(1 * PI * v)) * cos(4 * PI * v);
       let z = cos(1 * PI * u) * sin(1 * PI * v) + 6 * v - 2;
 
       // 크기 조절
