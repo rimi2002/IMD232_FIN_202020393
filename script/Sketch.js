@@ -2,11 +2,13 @@ let backgroundMusic;
 
 function preload() {
   // 음악 파일 로드
+  //https://p5js.org/ko/examples/sound-load-and-play-sound.html
   backgroundMusic = loadSound('assets/music.mp3');
 }
 
 function setup() {
   // 캔버스 생성
+  //https://p5js.org/ko/reference/#/p5/orbitControl
   createCanvas(windowWidth, windowHeight, WEBGL);
 
   // 원근 투영 설정
@@ -21,7 +23,7 @@ function draw() {
   background('#03030A');
 
   // 크기 조절 변수
-  let scl = 90;
+  let scl = 80;
 
   // 마우스로 화면 회전 가능하도록 설정
   orbitControl();
