@@ -1,4 +1,4 @@
-let backgroundMusic;
+let backgroundMusic; // 배경 음악을 저장하기 위한 변수 선언
 
 function preload() {
   // 음악 파일 로드
@@ -7,7 +7,7 @@ function preload() {
 }
 
 function setup() {
-  // 캔버스 생성
+  // 캔버스 생성(3D그래픽)
   //https://p5js.org/ko/reference/#/p5/orbitControl
   createCanvas(windowWidth, windowHeight, WEBGL);
 
@@ -29,13 +29,14 @@ function draw() {
   orbitControl();
 
   // 첫 번째 주제부 위치 계산
-  let topic1X = 180;
-  let topic1Y = 160;
-  let topic1Z = 200;
+  let topic1X = 180; //x좌표
+  let topic1Y = 160; //y좌표
+  let topic1Z = 200; //z좌표
 
   // 주제부 그리기
   push();
-  translate(topic1X, topic1Y, topic1Z);
+  translate(topic1X, topic1Y, topic1Z); // 주제부의 위치로 이동
+  //색상 랜덤 설정
   let tr1 = random(20);
   let tg1 = random(0);
   let tb1 = random(100);
@@ -49,6 +50,7 @@ function draw() {
   // fill(tfr1, tfg1, tfb1, tfa1);
   stroke('white');
 
+  //구 형태의 3D생성
   sphere(30);
   pop();
 
@@ -146,7 +148,9 @@ function draw() {
   }
 
   // 배경에 빛나는 별 그리기
+  //별 30개 그리기
   for (let i = 0; i < 30; i++) {
+    //좌표 랜덤 설정
     let px = random(-width / 2, width / 2);
     let py = random(-height / 2, height / 2);
     let pz = random(-4000, 4000);
